@@ -47,6 +47,13 @@ export class GamePage implements OnInit {
     {
       this.winner="jugador 1 ha ganado la partida";
     }
+    else
+    {
+      if(this.list[0]=='o' && this.list[1]=='o' && this.list[2]=='o')
+      {
+        this.winner="jugador 2 ha ganado la partida";
+      }
+    }
   }
 
 }
