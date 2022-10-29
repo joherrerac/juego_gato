@@ -7,13 +7,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GamePage implements OnInit {
 
+  list:any=[0,0,0,0,0,0,0,0,0]
+  turn:number=1;
+  icon:string;
+  winner:string;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   change(id, symbol, icon) {
-    document
+    document.getElementById('ico'+ id).setAttribute('name', icon);
+    document.getElementById(id).setAttribute('disabled', 'true');
+    this.list[id] = symbol
+  }
+
+  move(ev){
+    if(this.turn==1){
+      this.icon='ellipse-outline';
+      this.change(ev.srcElement.id, 'o', this.icon);
+      this.turn=1;
+    }
+    console.log(this.list);
+    this.viewWinner();
+
+  }
+
+  viewWinner(){
+    if(this.list[0]=='x' && this.list[1]=='x' && this.list[2]=='x')
+    {
+      this.winner="jugador 1 ha ganado la partida";
+    }
   }
 
 }
