@@ -1,0 +1,7 @@
+{
+  "name": "juego_gato",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
